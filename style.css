@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Quando&display=swap');
+
+:root {
+    --base-color: #fbf6ef;
+    --primary-color: #3b2002;
+    --secondary-color: #5a3003;
+    --tertiary-color: #f99c39;
+    --lighter-color: #f4e7d1;
+    --green-color: #696e29;
+    --font-family-primary: 'Quando', serif;
+    --font-family-secondary: 'Monofett', serif;
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Quando', serif;
+}
+
+body {
+    background-color: rgb(251, 246, 239);
+    margin: 0px;
+}
+h1 {
+    color:#3b2002;
+    font-size: 32px;
+}
+p {
+    color:#3b2002;
+    font-size: 20px;
+}
+
+nav{
+    display:flex;
+    padding: 1% 10%;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+nav img{
+    width:150px;
+}
+
+.nav-links{
+    flex:1;
+    text-align:right;
+}
+
+.nav-links ul li{
+    list-style:none;
+    display:inline-block;
+    width: 160px;
+    text-align:center;
+}
+
+.nav-links ul li a{
+    color:#3b2002;
+    text-decoration:none;
+    font-family: 'Quando', serif;
+    font-size: 20px;
+}
+
+.nav-links ul li a.active{
+    font-family: 'Monofett', serif;
+    color:#3b2002;
+    font-size: 30px;
+}
+
+.intro-box{
+    width:75%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+.intro-text{
+    width:50%;
+    text-align:left;
+}
+
+button{
+    padding:12px 22px;
+    font-family: 'Quando', serif;
+
+    border:2px solid #3b2002;
+    border-radius:10px;
+    font-size: 20px;
+
+    background:transparent;
+}
+
+#dino {
+    width:326px;
+}
+
+#pic {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 300px; 
+}
