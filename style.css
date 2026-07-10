@@ -84,16 +84,19 @@ nav img{
     text-align:left;
 }
 
-button{
-    padding:12px 22px;
+a.button {
+    padding: 12px 22px;
     font-family: 'Quando', serif;
 
-    border:2px solid #3b2002;
-    border-radius:10px;
+    border: 2px solid #3b2002;
+    border-radius: 10px;
     font-size: 20px;
 
-    background:transparent;
+    background-color: transparent;
+    text-decoration: none;
+    color: #3b2002;
 }
+
 
 #dino {
     width:326px;
