@@ -2,6 +2,7 @@ const start = document.getElementById("start");
 const pause = document.getElementById("pause");
 const reset = document.getElementById("reset");
 const timer = document.getElementById("timer");
+const alarm = new Audio("audio/completed-sound-effect.mp3");
 
 let timeLeft = 1500;
 let interval;
@@ -24,8 +25,7 @@ const startTimer = () => {
 
             if (timeLeft === 0) {
                   clearInterval(interval);
-                  timeLeft = 1500;
-                  updateTimer();
+                  alarm.play();
             }
       }, 1000);
 };
