@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quando&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Quando&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Monofett&family=Quando&display=swap');
 
 :root {
     --base-color: #fbf6ef;
@@ -36,6 +35,10 @@ nav{
     padding: 1% 10%;
     justify-content:space-evenly;
     align-items:center;
+}
+
+li:hover {
+    transform: translateY(-5px);
 }
 
 nav img{
@@ -97,6 +100,56 @@ a.button {
     color: #3b2002;
 }
 
+.pomodoro-page {
+    margin-top: 100px;
+}
+.pomodoro-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    width: 30%;
+    margin: 0 auto;
+
+    gap: 30px;
+    color: var(--primary-color);
+    background-color: var(--lighter-color);
+    border-radius: 70px;
+    padding: 30px;
+    box-shadow: 3px 3px 15px var(--secondary-color);
+}
+
+.buttons {
+    display: flex;
+    gap: 1em;
+}
+
+.timer {
+    font-size: 70px;
+    font-family: 'Archivo Black', serif;
+}
+
+button {
+    font-family: 'Quando', serif;
+    font-size: 25px;
+    padding: 10px 20px;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--base-color);
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-5px);
+}
+
+#hourglass {
+    width: 125px;
+}
 
 #dino {
     width:326px;
@@ -106,5 +159,12 @@ a.button {
     display: block;
     width: 100%;
     height: auto;
-    margin-top: 300px; 
+    margin-top: 400px; 
+}
+
+#pic-p {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
 }
