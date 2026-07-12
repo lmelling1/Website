@@ -5,28 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lea's website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 <body>
     <section class="header">
 <nav>
     <a href="index.html"><img src="images/Logo (1).png"></a>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
+    <i class="fa-regular fa-rectangle-xmark" style="color: rgb(59, 32, 20);" onClick="hideMenu()"></i>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="games.html">Games</a></li>
             <li><a href="pomodoro.html" class="active">Pomodoro</a></li>
             <li><a href="secret.html">Secret</a></li>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="button">Surprise</a>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="button">Surprise</a></li>
         </ul>
     </div>
+    <i class="fa-solid fa-bars" style="color: rgb(59, 32, 20);" onClick="showMenu()"></i>
 </nav>
     </section>
     <div class= "pomodoro-page">
         <div class="pomodoro-box">
 
-            <img id="hourglass" src="images/Timer.png">
+            <img id="hourglass" src="images/Hourglass.png">
 
             <p class="timer" id="timer">25:00</p>
 
@@ -37,7 +40,22 @@
             </div>
         </div>
     </div>
-    <img id="pic-p" src="images/Website homepage (2).png">  
+    <img id="pic-p" src="images/Website homepage (2).png">
+    <audio>
+        <source src="audio/completed-sound-effect.mp3" type="audio/mpeg">
+    </audio>
+    
     <script src="pomodoro.js"></script>
+
+        <script>
+        var navLinks = document.getElementById("navLinks");
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+    </script>
+    
 </body>
 </html>

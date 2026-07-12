@@ -6,13 +6,15 @@
     <title>Lea's website</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/Icon leaf.png">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+</head>
 <body>
     <section class="header">
 <nav>
     <a href="index.html"><img src="images/Logo (1).png"></a>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
+        <i class="fa-regular fa-rectangle-xmark" style="color: rgb(59, 32, 20);" onClick="hideMenu()"></i>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
@@ -22,10 +24,20 @@
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="button">Surprise</a>
         </ul>
     </div>
+    <i class="fa-solid fa-bars" style="color: rgb(59, 32, 20);" onClick="showMenu()"></i>
 </nav>
     </section>   
 <div class="intro-box">
 <p>Coming soon...</p>
-</div>    
+</div>  
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+    </script>  
 </body>
 </html>

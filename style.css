@@ -18,15 +18,15 @@
 }
 
 body {
-    background-color: rgb(251, 246, 239);
+    background-color: var(--base-color);
     margin: 0px;
 }
 h1 {
-    color:#3b2002;
+    color: var(--primary-color);
     font-size: 32px;
 }
 p {
-    color:#3b2002;
+    color: var(--primary-color);
     font-size: 20px;
 }
 
@@ -58,7 +58,7 @@ nav img{
 }
 
 .nav-links ul li a{
-    color:#3b2002;
+    color: var(--primary-color);
     text-decoration:none;
     font-family: 'Quando', serif;
     font-size: 20px;
@@ -66,12 +66,12 @@ nav img{
 
 .nav-links ul li a.active{
     font-family: 'Monofett', serif;
-    color:#3b2002;
+    color: var(--primary-color);
     font-size: 30px;
 }
 
 .intro-box{
-    width:75%;
+    width:60%;
     position:absolute;
     top:50%;
     left:50%;
@@ -91,18 +91,18 @@ a.button {
     padding: 12px 22px;
     font-family: 'Quando', serif;
 
-    border: 2px solid #3b2002;
+    border: 2px solid var(--primary-color);
     border-radius: 10px;
     font-size: 20px;
 
     background-color: transparent;
     text-decoration: none;
-    color: #3b2002;
+    color: var(--primary-color);
 }
 
 a.button:hover {
-    background-color: #3b2002;
-    color: #fbf6ef;;
+    background-color: var(--primary-color);
+    color: var(--base-color);
 }
 
 .pomodoro-page {
@@ -172,4 +172,130 @@ button:hover {
     width: 100%;
     height: auto;
     margin-top: 20px;
+}
+
+nav .fa-regular {
+    display: none;
+}
+
+nav .fa-solid {
+    display: none;
+}
+
+@media (max-width: 700px) {
+
+    .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    }
+
+    .intro-box {
+        flex-direction: column;
+        width: 90%;
+        margin-top: 80px;
+    }
+
+    .intro-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    #dino {
+        width: 180px;
+        margin-top: 20px;
+    }
+
+    #pic {
+    width: 100%;
+    object-fit: cover;      
+    object-position: center;
+    display: block;
+    margin-top: 600px;
+    height: 250px;
+    }
+
+    #pic-p {
+    width: 100%;
+    object-fit: cover;      
+    object-position: center;
+    display: block;
+    margin-top: 600px;
+    height: 250px;
+}
+
+    .nav-links ul li {
+        display: block;
+        margin: 30px 0;
+    }
+
+    .nav-links {
+        position: absolute;
+        height: 100vh;
+        width: 190px;
+        background: var(--base-color);
+        top: 0;
+        right: -190px;
+        text-align: left;
+        z-index: 2;
+    }
+
+    nav .fa-regular {
+        display: block;
+        margin: 10px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    nav .fa-solid {
+        display: block;
+        margin: 10px;
+        margin-left: 130px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .nav-links ul {
+        padding: 10px;
+    }
+
+    .pomodoro-box {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+        width: 70%;
+        margin: 0 auto;
+
+        gap: 30px;
+        color: var(--primary-color);
+        background-color: var(--lighter-color);
+        border-radius: 70px;
+        padding: 30px;
+        box-shadow: 3px 3px 15px var(--secondary-color);
+    } 
+
+    .timer {
+        font-size: 40px;
+        font-family: 'Archivo Black', serif;
+    }
+
+    button {
+        font-family: 'Quando', serif;
+        font-size: 13px;
+        padding: 10px 20px;
+        border-radius: 40px;
+        letter-spacing: 1px;
+        border: none;
+        background-color: var(--primary-color);
+        color: var(--base-color);
+        cursor: pointer;
+    }
+
+    #hourglass {
+        width: 80px;
+    }
+
 }
