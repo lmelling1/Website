@@ -236,11 +236,10 @@ nav .fa-solid {
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, 0.5);
-        display: none;
         z-index: 1;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.4s ease;
     }
 
     #overlay.active {
