@@ -30,6 +30,11 @@ p {
     font-size: 20px;
 }
 
+p1 {
+    color: var(--tertiary-color);
+    font-size: 20px;
+}
+
 nav{
     display:flex;
     padding: 1% 10%;
@@ -114,16 +119,14 @@ a.button:hover {
     flex-direction: column;
     justify-content: center;
 
-
     width: 30%;
     margin: 0 auto;
 
     gap: 30px;
-    color: var(--primary-color);
-    background-color: var(--lighter-color);
+    background-color:var(--primary-color);
     border-radius: 70px;
     padding: 30px;
-    box-shadow: 3px 3px 15px var(--secondary-color);
+    box-shadow: 3px 3px 15px var(--primary-color);
 }
 
 .buttons {
@@ -139,12 +142,13 @@ a.button:hover {
 button {
     font-family: 'Quando', serif;
     font-size: 25px;
+    font-weight: bold;
     padding: 10px 20px;
     border-radius: 40px;
     letter-spacing: 1px;
     border: none;
-    background-color: var(--primary-color);
-    color: var(--base-color);
+    background-color: var(--lighter-color);
+    color: var(--primary-color);
     cursor: pointer;
 }
 
@@ -221,8 +225,24 @@ nav .fa-solid {
     object-position: center;
     display: block;
     margin-top: 600px;
-    height: 250px;
-}
+    height: 250px;  
+    }
+
+    html, body {
+    overflow-x: hidden;
+    }
+
+    #overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 1;
+    }
+
+    .nav-links {
+        z-index: 20;
+    }
 
     .nav-links ul li {
         display: block;
@@ -230,14 +250,15 @@ nav .fa-solid {
     }
 
     .nav-links {
-        position: absolute;
+        position: fixed;
         height: 100vh;
         width: 190px;
         background: var(--base-color);
         top: 0;
-        right: -190px;
+        right: -100%;
         text-align: left;
         z-index: 2;
+        transition: 1s;
     }
 
     nav .fa-regular {
