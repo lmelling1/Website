@@ -1,0 +1,301 @@
+.portfolio-page {
+  --portfolio-cream: var(--base-color, #fbf6ef);
+  --portfolio-brown: var(--primary-color, #3b2002);
+  --portfolio-brown-light: var(--secondary-color, #5a3003);
+  --portfolio-orange: var(--orange-color, #f99c39);
+  --portfolio-light: var(--light-cream, #f4e7d1);
+
+  background: var(--portfolio-cream);
+  color: var(--portfolio-brown);
+  min-height: 100vh;
+}
+
+.portfolio-main {
+  width: min(1200px, 88%);
+  margin: 0 auto;
+  padding: 50px 0 100px;
+}
+
+.portfolio-header {
+  max-width: 680px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.portfolio-header h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  font-weight: normal;
+}
+
+.portfolio-header h1 span {
+  color: var(--portfolio-orange);
+}
+
+.portfolio-text {
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.portfolio-gallery {
+  columns: 3 260px;
+  column-gap: 28px;
+}
+
+.portfolio-card {
+  display: block;
+  width: 100%;
+  margin: 0 0 34px;
+  padding: 0;
+  break-inside: avoid;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.portfolio-preview {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid rgb(59 32 2 / 12%);
+  border-radius: 4px;
+  background: var(--portfolio-light);
+  isolation: isolate;
+}
+
+.preview-A3 {
+  aspect-ratio: 1 /sqrt(2);
+}
+
+.preview-wide {
+  aspect-ratio: 2.2 / 1;
+}
+
+.preview-square {
+  aspect-ratio: 1 / 1;
+}
+
+.preview-jub {
+  aspect-ratio: 2.7 / 1.8;
+}
+
+.portfolio-preview iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+  background: var(--portfolio-light);
+}
+
+.portfolio-view {
+  position: absolute;
+  inset: auto 12px 12px 12px;
+  z-index: 2;
+  padding: 12px 14px;
+  border-radius: 3px;
+  background: var(--portfolio-brown);
+  color: var(--portfolio-cream);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-view,
+.portfolio-card:focus-visible .portfolio-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-card:focus-visible {
+  outline: 3px solid var(--portfolio-orange);
+  outline-offset: 5px;
+}
+
+.portfolio-card-info {
+  padding-top: 14px;
+}
+
+.portfolio-card-info h2 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: normal;
+}
+
+.portfolio-card-info p {
+  color: var(--portfolio-brown-light);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.portfolio-card:hover .portfolio-card-info h2 {
+  color: var(--portfolio-brown-light);
+}
+
+/* PDF preview */
+
+.pdf-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgb(30 19 8 / 75%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.pdf-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+.pdf-modal-panel {
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+  width: min(1100px, 96vw);
+  height: auto;
+  max-height: 94vh;
+
+  padding: 20px;
+  border-radius: 6px;
+  background: var(--portfolio-cream);
+  color: var(--portfolio-brown);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 25%);
+  overflow: hidden;
+}
+
+.pdf-modal-viewer {
+  width: 100%;
+  height: min(70vh, 750px);
+  min-height: 250px;
+  flex: 0 1 auto;
+  overflow: hidden;
+  background: white;
+}
+
+.pdf-modal-viewer iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+.pdf-modal.is-open .pdf-modal-panel {
+  transform: translateY(0);
+}
+
+.pdf-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.pdf-modal-header h2 {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: normal;
+}
+
+.modal-close {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid var(--portfolio-brown);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--portfolio-brown);
+  font: inherit;
+  font-size: 42px;
+
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: var(--portfolio-brown);
+  color: var(--portfolio-cream);
+}
+
+.pdf-modal-footer {
+  padding-top: 16px;
+  text-align: right;
+}
+
+.pdf-modal-footer a {
+  color: var(--portfolio-brown);
+  text-decoration-color: var(--portfolio-orange);
+  text-underline-offset: 4px;
+}
+
+.pdf-modal-footer a:hover {
+  color: var(--portfolio-brown-light);
+}
+
+@media (max-width: 700px) {
+
+  .portfolio-main {
+    width: 90%;
+    padding-top: 35px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 35px;
+  }
+
+  .portfolio-gallery {
+    columns: 2 140px;
+    column-gap: 14px;
+  }
+
+  .portfolio-card {
+    margin-bottom: 24px;
+  }
+
+  .portfolio-card-info h2 {
+    font-size: 0.95rem;
+  }
+
+  .pdf-modal {
+    padding: 10px;
+  }
+
+  .pdf-modal-panel {
+    max-height: 96vh;
+  }
+
+  .pdf-modal-viewer {
+    height: 65vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-page *,
+  .portfolio-page *::before,
+  .portfolio-page *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

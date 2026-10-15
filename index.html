@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lea's website</title>
+    <title>Lea's Website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     
 </head>
@@ -17,7 +18,8 @@
     <h1 style= "font-size: 50px;"></h1> 
     <section class="header">
 <nav>
-    <a href="index.html"><img src="images/Logo (1).png"></a>
+    <a href="index.html"><img id="logo" src="images/Logo (1).png"></a>
+    <audio id="leaves" src="audio/pwlpl-leaves-rustling-in-the-wind-428660.mp3" preload="auto"></audio>
     <div class="nav-links" id="navLinks">
         <i class="fa-regular fa-rectangle-xmark" style="color: rgb(59, 32, 20);" onClick="hideMenu()"></i>
         <ul>
@@ -25,7 +27,7 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="games.html">Games</a></li>
             <li><a href="pomodoro.html">Pomodoro</a></li>
-            <li><a href="secret.html">Secret</a></li>
+            <li><a href="secret.html">Portfolio</a></li>
             <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="button">Surprise</a></li>
         </ul>
     </div>
@@ -33,35 +35,50 @@
 </nav>
     </section>
 
-    <div class="intro-box">
+    <div class="intro-box" id="introBox">
+        <div id="computerbox">
+            <img id="computer" src="images/Computer.png">
+        </div>
         <div class="intro-text">
             <h1>Welcome to my website!</h1>
             <p>Here you’ll find some
             of my projects and some games i’ve coded.<br>More features coming soon!</p>
         </div>
-    <img id="dino" src="images/Dino.png">
     </div>
-
+    <div class="dinoGame">
+            <div id="dino"></div>
+            <div id="cactus"></div>
+        </div>
     <img id="pic" src="images/Website homepage (2).png">
     </div>
-
+    <script src="index.js"></script>
     <script>
-        var navLinks = document.getElementById("navLinks");
-        var overlay = document.getElementById("overlay");
+    var navLinks = document.getElementById("navLinks");
+    var overlay = document.getElementById("overlay");
+    const introBox = document.getElementById("introBox");
+    const leaves = document.getElementById("leaves");
+    const logo = document.getElementById("logo");
 
-function showMenu() {
-    navLinks.style.right = "0";
-    navLinks.style.pointerEvents = "auto";
-    overlay.classList.add("active");
-}
 
-function hideMenu() {
-    navLinks.style.right = "-100%";
-    navLinks.style.pointerEvents = "none";
-    overlay.classList.remove("active");
-}
+    function showMenu() {
+        navLinks.style.right = "0";
+        navLinks.style.pointerEvents = "auto";
+        overlay.classList.add("active");
+    }
+
+    function hideMenu() {
+        navLinks.style.right = "-100%";
+        navLinks.style.pointerEvents = "none";
+        overlay.classList.remove("active");
+    }
+
+    logo.addEventListener("mouseenter", () => {
+        leaves.currentTime = 0;
+        leaves.play();
+    });
+
     </script>  
-    
+
 </body>
 
 </html>

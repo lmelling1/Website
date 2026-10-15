@@ -1,0 +1,41 @@
+.dinoGame {
+    width:55%;
+    height:25%;
+    margin: auto;
+    position:absolute;
+    top:35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes jump {
+    0% {
+        top:125px;
+    }
+    30%{
+        top:100px;
+    }
+    50% {
+        top:75px;
+    }
+    80%{
+        top:100px;
+    }
+    100% {
+        top:125px;
+    }
+}
+
+#dino.jump {
+    animation: jump 0.3s linear;
+}
+
+#dino {
+    width:75px;
+    height:75px;
+    background-image: url(images/dino\ game.png);
+    background-size: 75px 75px;
+    position:absolute;
+    top:125px;
+    left:6%;
+}

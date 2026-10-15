@@ -1,0 +1,33 @@
+#snakeBox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+#snakeBoard {
+    border : 3px solid var(--primary-color);
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 2.5%;
+}
+
+#scoreTxt {
+    font-family: 'Quando', serif;
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+#resetSnake {
+    font-family: 'Quando', serif;
+    font-size: 20px;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    background-color: var(--primary-color);
+    color: var(--lighter-color);
+    cursor: pointer;
+    width:140px;
+    align-self: center;
+}
